@@ -6,7 +6,7 @@
 
 # ERC721 Marketplace
 ## Description
-This repo contains the contracts (along with their tests) to build an ERC721 marketplace on ethereum, wich underlying currency can either be ethereum itself (with _eth_) or an IERC20 implementation ([Openzeppelin's implementation](https://github.com/OpenZeppelin/openzeppelin-contracts/tree/master/contracts/token/ERC20) or your custom implementation).
+This repo contains the contracts (along with their tests) to build an ERC721 marketplace on ethereum, wich underlying currency can either be ethereum itself (with _eth_) or an ERC20 implementation ([Openzeppelin's implementation](https://github.com/OpenZeppelin/openzeppelin-contracts/tree/master/contracts/token/ERC20) or your custom implementation).
 
 ## Usage
 ```bash
@@ -15,7 +15,7 @@ npm run compile
 ```
 - compile the contracts
 - deploy them trough the provided scripts trough an ethereum node ([Infura](https://infura.io/) provides some for free)
-- build a frontend that handles contract calls (I suggest [metamask](metamask.io) apis combined with [ethers](https://github.com/ethers-io/ethers.js/) to interact with your contract)
+- build a frontend that handles contract calls (I suggest [metamask](https://metamask.io/) apis combined with [ethers](https://github.com/ethers-io/ethers.js/) to interact with your contract)
 - deploy (if your site is a single page site build for example with angular or react i also suggesto [ipfs](https://ipfs.io/) to deploy it for free)
 
 ### Tests
