@@ -1,12 +1,12 @@
 // SPDX-License-Identifier: MIT
 pragma solidity >=0.5.8;
 
-import "./NFTLabStore.sol";
+import "./UnelmaMarket.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract NFTLabStoreMarketplaceVariant is NFTLabStore, Ownable {
+contract UnelmaMarketMarketplaceVariant is UnelmaMarket, Ownable {
     constructor(string memory _name, string memory _symbol)
-        NFTLabStore(_name, _symbol)
+        UnelmaMarket(_name, _symbol)
     {}
 
     /**

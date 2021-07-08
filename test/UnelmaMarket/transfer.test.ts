@@ -2,24 +2,24 @@ import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers";
 import { expect } from "chai";
 import { ContractFactory } from "ethers";
 import { ethers } from "hardhat";
-import { NFTLabStore } from "typechain";
+import { UnelmaMarket } from "typechain";
 
 describe("NFTLabStore - Transfer tests", function () {
-  let nftLabStore: NFTLabStore;
+  let nftLabStore: UnelmaMarket;
   let signers: SignerWithAddress[];
   let nftLabStoreFactory: ContractFactory;
 
   beforeEach(async () => {
     signers = await ethers.getSigners();
     nftLabStoreFactory = await ethers.getContractFactory(
-      "NFTLabStore",
+      "UnelmaMarket",
       signers[0]
     );
 
     nftLabStore = (await nftLabStoreFactory.deploy(
-      "NFTLab",
-      "NFTL"
-    )) as NFTLabStore;
+      "UnelmaMarket",
+      "UMARKET"
+    )) as UnelmaMarket;
   });
 
   it("Only owner should be able to safeTransferFrom a NFT", async () => {
@@ -42,7 +42,7 @@ describe("NFTLabStore - Transfer tests", function () {
 
     await nftLabStore.mint(signers[0].address, nft);
 
-    const notOwnerCaller: NFTLabStore = nftLabStore.connect(signers[1]);
+    const notOwnerCaller: UnelmaMarket = nftLabStore.connect(signers[1]);
 
     await expect(
       notOwnerCaller["safeTransferFrom(address,address,uint256)"](

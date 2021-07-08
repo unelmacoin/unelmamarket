@@ -5,7 +5,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/token/ERC721/IERC721.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
-import "./NFTLabStoreMarketplaceVariant.sol";
+import "./UnelmaMarketMarketplaceVariant.sol";
 
 /**
  * @title NFTLabMarketplace
@@ -19,7 +19,7 @@ contract ERC20Marketplace {
     event TradeStatusChange(uint256 ad, string status);
 
     IERC20 currencyToken;
-    NFTLabStoreMarketplaceVariant tokenHandler;
+    UnelmaMarketMarketplaceVariant tokenHandler;
 
     struct Trade {
         address poster;
@@ -40,7 +40,7 @@ contract ERC20Marketplace {
         string memory _symbol
     ) {
         currencyToken = IERC20(_currencyTokenAddress);
-        tokenHandler = new NFTLabStoreMarketplaceVariant(_name, _symbol);
+        tokenHandler = new UnelmaMarketMarketplaceVariant(_name, _symbol);
     }
 
     /**

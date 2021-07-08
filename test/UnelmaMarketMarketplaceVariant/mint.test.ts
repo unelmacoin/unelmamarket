@@ -2,25 +2,25 @@ import { ethers } from "hardhat";
 import { expect } from "chai";
 import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers";
 import { ContractFactory } from "@ethersproject/contracts";
-import { NFTLabStoreMarketplaceVariant } from "typechain";
+import { UnelmaMarketMarketplaceVariant } from "typechain";
 import { BigNumberish } from "ethers";
 
-describe("NFTLabStoreMarketplace - minting test", function () {
-  let nftLabStore: NFTLabStoreMarketplaceVariant;
+describe("UnelmaMarketplace - minting test", function () {
+  let nftLabStore: UnelmaMarketMarketplaceVariant;
   let signers: SignerWithAddress[];
   let nftLabStoreFactory: ContractFactory;
 
   beforeEach(async () => {
     signers = await ethers.getSigners();
     nftLabStoreFactory = await ethers.getContractFactory(
-      "NFTLabStoreMarketplaceVariant",
+      "UnelmaMarketMarketplaceVariant",
       signers[0]
     );
 
     nftLabStore = (await nftLabStoreFactory.deploy(
-      "NFTLab",
-      "NFTL"
-    )) as NFTLabStoreMarketplaceVariant;
+      "UnelmaMarket",
+      "UMarket"
+    )) as UnelmaMarketMarketplaceVariant;
   });
 
   it("Should let owner transfer focefully", async () => {

@@ -1,7 +1,7 @@
 {
-  "name": "erc721nftlab",
+  "name": "UnelmaMarket_ERC721",
   "version": "2.1.0",
-  "description": "Implementation of ERC721 contract for NFTLab dapp",
+  "description": "Implementation of ERC721 contract for UnelmaMarket",
   "main": "scripts/main.js",
   "directories": {
     "test": "test"
@@ -13,7 +13,7 @@
     "prettify": "prettier --write test contracts",
     "pretticheck": "prettier --check test contracts"
   },
-  "author": "Luca Zaninotto",
+  "author": "UnelmaMarket",
   "license": "MIT",
   "dependencies": {
     "@openzeppelin/contracts": "^4.1.0",

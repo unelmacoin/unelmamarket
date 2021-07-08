@@ -4,7 +4,7 @@ pragma solidity ^0.8.0;
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
-import "./NFTLabStoreMarketplaceVariant.sol";
+import "./UnelmaMarketMarketplaceVariant.sol";
 
 /**
  * @title NFTLabMarketplace
@@ -17,7 +17,7 @@ import "./NFTLabStoreMarketplaceVariant.sol";
 contract ETHMarketplace is Ownable {
     event TradeStatusChange(uint256 id, string status);
 
-    NFTLabStoreMarketplaceVariant tokenHandler;
+    UnelmaMarketMarketplaceVariant tokenHandler;
 
     struct Trade {
         address payable poster;
@@ -33,7 +33,7 @@ contract ETHMarketplace is Ownable {
     Counters.Counter private tradeCounter;
 
     constructor(string memory _name, string memory _symbol) {
-        tokenHandler = new NFTLabStoreMarketplaceVariant(_name, _symbol);
+        tokenHandler = new UnelmaMarketMarketplaceVariant(_name, _symbol);
     }
 
     /**

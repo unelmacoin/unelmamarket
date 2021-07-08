@@ -2,8 +2,8 @@ import { ethers } from 'ethers';
 import hardhat from 'hardhat';
 
 async function deploy(name: String, symbol: String) {
-  const NFTLabStore = await hardhat.ethers.getContractFactory("NFTLabStore");
-  const nftls = await NFTLabStore.deploy(name, symbol);
+  const UnelmaMarket = await hardhat.ethers.getContractFactory("UnelmaMarket");
+  const nftls = await UnelmaMarket.deploy(name, symbol);
 
   await nftls.deployed();
 
@@ -11,7 +11,7 @@ async function deploy(name: String, symbol: String) {
   console.log("Generated at: " + nftls.address);
 }
 
-deploy("Token name", "TKNS").then(() => {
+deploy("Token name", "UnelmaMarket").then(() => {
   console.log("done.")
 }).catch(error => {
   console.log(error)

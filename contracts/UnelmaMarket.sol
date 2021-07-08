@@ -5,7 +5,7 @@ import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 
-contract NFTLabStore is ERC721URIStorage, ERC721Enumerable {
+contract UnelmaMarket is ERC721URIStorage, ERC721Enumerable {
     struct NFTLab {
         string cid;
         string metadataCid;
@@ -102,7 +102,7 @@ contract NFTLabStore is ERC721URIStorage, ERC721Enumerable {
      * @dev mints an NFT out of thin air for the msg.sender, the msg
      * sender is now the owner of that NFT .
      * @param nft the struct describing the NFT, See
-     * {xref-NFTLabStore-NFTLab} for reference
+     * {xref-UnelmaMarket-NFTLab} for reference
      */
     function mint(address to, NFTLab memory nft) public {
         require(_hashToId[nft.cid] == 0, "Token already exists");

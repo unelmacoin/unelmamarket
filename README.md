@@ -1,8 +1,8 @@
-[![Compilation](https://github.com/NFT-Lab/ERC721-marketplace/actions/workflows/solidity-compile.yaml/badge.svg)](https://github.com/NFT-Lab/ERC721-marketplace/actions/workflows/solidity-compile.yaml)
-[![Test](https://github.com/NFT-Lab/ERC721-marketplace/actions/workflows/tests.yaml/badge.svg)](https://github.com/NFT-Lab/ERC721-marketplace/actions/workflows/tests.yaml)
-[![Coverage Status](https://coveralls.io/repos/github/NFT-Lab/ERC721-marketplace/badge.svg?branch=main)](https://coveralls.io/github/NFT-Lab/ERC721-marketplace?branch=main)
-[![Test](https://github.com/NFT-Lab/ERC721-marketplace/actions/workflows/code-formatting.yaml/badge.svg)](https://github.com/NFT-Lab/ERC721-marketplace/actions/workflows/code-formatting.yaml)
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+[![Compilation](https://github.com/unelmacoin/unelmamarket/actions/workflows/solidity-compile.yaml/badge.svg)](https://github.com/unelmacoin/unelmamarket/actions/workflows/solidity-compile.yaml)
+[![Test](https://github.com/unelmacoin/unelmamarket/actions/workflows/tests.yaml/badge.svg)](https://github.com/unelmacoin/unelmamarket/actions/workflows/tests.yaml)
+[![Coverage Status](https://coveralls.io/repos/github/unelmacoin/unelmamarket/badge.svg?branch=main)](https://coveralls.io/github/unelmacoin/unelmamarket?branch=main)
+[![Test](https://github.com/unelmacoin/unelmamarket/actions/workflows/code-formatting.yaml/badge.svg)](https://github.com/unelmacoin/unelmamarket/actions/workflows/code-formatting.yaml)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier) 
 
 # ERC721 Marketplace
 ## Description
@@ -33,6 +33,3 @@ all the code to be integrated has to be formatted with [prettier](prettier.io). 
 npm run prettify
 ```
 and your code will automatically be formatted, so that everything is uniform. After that commit and make your pull request
-
-## Documentation
-Documentation for architectural and implementation decisions can be found on the [wiki](/wiki) page

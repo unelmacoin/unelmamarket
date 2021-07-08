@@ -3,14 +3,14 @@ import { ethers } from "hardhat";
 import { expect } from "chai";
 import {
   ERC20Marketplace,
-  NFTLabStoreMarketplaceVariant,
+  UnelmaMarketMarketplaceVariant,
   BadToken,
 } from "typechain";
 
 describe("ERC20Marketplace tests", function () {
   let signers: SignerWithAddress[];
   let nftLabMarketplace: ERC20Marketplace;
-  let nftLabStore: NFTLabStoreMarketplaceVariant;
+  let nftLabStore: UnelmaMarketMarketplaceVariant;
   let NFT = { cid: "cid", metadataCid: "metadataCid" };
 
   beforeEach(async () => {
@@ -21,7 +21,7 @@ describe("ERC20Marketplace tests", function () {
     );
 
     const nftLabStoreFactory = await ethers.getContractFactory(
-      "NFTLabStoreMarketplaceVariant",
+      "UnelmaMarketMarketplaceVariant",
       signers[0]
     );
 
@@ -34,13 +34,13 @@ describe("ERC20Marketplace tests", function () {
 
     nftLabMarketplace = (await nftLabMarketplaceFactory.deploy(
       badToken.address,
-      "NFTlabToken",
-      "NFTL"
+      "UnelmaMarket",
+      "UMARKET"
     )) as ERC20Marketplace;
 
     nftLabStore = (await nftLabStoreFactory.attach(
       await nftLabMarketplace.getStorage()
-    )) as NFTLabStoreMarketplaceVariant;
+    )) as UnelmaMarketMarketplaceVariant;
 
     // each signer has 1000 tokens
     signers.forEach(async (signer) => {

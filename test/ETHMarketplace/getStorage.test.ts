@@ -2,13 +2,13 @@ import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers";
 import { ContractFactory } from "ethers";
 import { ethers } from "hardhat";
 import { expect } from "chai";
-import { ETHMarketplace, NFTLabStoreMarketplaceVariant } from "typechain";
+import { ETHMarketplace, UnelmaMarketMarketplaceVariant } from "typechain";
 
 describe("ETHMarketplace tests", function () {
   let signers: SignerWithAddress[];
   let nftLabMarketplaceFactory: ContractFactory;
   let nftLabMarketplace: ETHMarketplace;
-  let nftLabStore: NFTLabStoreMarketplaceVariant;
+  let nftLabStore: UnelmaMarketMarketplaceVariant;
   let nftLabStoreFactory: ContractFactory;
   let NFT = { cid: "cid", metadataCid: "metadataCid" };
 
@@ -20,18 +20,18 @@ describe("ETHMarketplace tests", function () {
     );
 
     nftLabStoreFactory = await ethers.getContractFactory(
-      "NFTLabStoreMarketplaceVariant",
+      "UnelmaMarketMarketplaceVariant",
       signers[0]
     );
 
     nftLabMarketplace = (await nftLabMarketplaceFactory.deploy(
-      "NFTlabToken",
-      "NFTL"
+      "UnelmaMarket",
+      "UMARKET"
     )) as ETHMarketplace;
 
     nftLabStore = (await nftLabStoreFactory.attach(
       await nftLabMarketplace.getStorage()
-    )) as NFTLabStoreMarketplaceVariant;
+    )) as UnelmaMarketMarketplaceVariant;
   });
 
   it("Get a non empty address of storage", async () => {

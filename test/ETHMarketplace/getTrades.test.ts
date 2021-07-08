@@ -3,13 +3,13 @@ import { ContractFactory } from "ethers";
 import { ethers } from "hardhat";
 import { MockContract, smockit } from "@eth-optimism/smock";
 import { expect } from "chai";
-import { ETHMarketplace, NFTLabStoreMarketplaceVariant } from "typechain";
+import { ETHMarketplace, UnelmaMarketMarketplaceVariant } from "typechain";
 
 describe("ETHMarketplace - get trades", function () {
   let signers: SignerWithAddress[];
   let nftLabMarketplaceFactory: ContractFactory;
   let nftLabMarketplace: ETHMarketplace;
-  let nftLabStore: NFTLabStoreMarketplaceVariant;
+  let nftLabStore: UnelmaMarketMarketplaceVariant;
   let nftLabStoreFactory: ContractFactory;
   let NFT = { cid: "cid", metadataCid: "metadataCid" };
 
@@ -21,18 +21,18 @@ describe("ETHMarketplace - get trades", function () {
     );
 
     nftLabStoreFactory = await ethers.getContractFactory(
-      "NFTLabStoreMarketplaceVariant",
+      "UnelmaMarketMarketplaceVariant",
       signers[0]
     );
 
     nftLabMarketplace = (await nftLabMarketplaceFactory.deploy(
-      "NFTlabToken",
-      "NFTL"
+      "UnelmaMarket",
+      "UMARKET"
     )) as ETHMarketplace;
 
     nftLabStore = (await nftLabStoreFactory.attach(
       await nftLabMarketplace.getStorage()
-    )) as NFTLabStoreMarketplaceVariant;
+    )) as UnelmaMarketMarketplaceVariant;
   });
 
   it("Should get all the trades", async () => {

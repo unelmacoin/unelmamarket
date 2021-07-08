@@ -2,25 +2,25 @@ import { ethers } from "hardhat";
 import { expect } from "chai";
 import { SignerWithAddress } from "@nomiclabs/hardhat-ethers/signers";
 import { ContractFactory } from "@ethersproject/contracts";
-import { NFTLabStore } from "typechain";
+import { UnelmaMarket } from "typechain";
 import { BigNumberish } from "ethers";
 
 describe("NFTLabStore - token getters", function () {
-  let nftLabStore: NFTLabStore;
+  let nftLabStore: UnelmaMarket;
   let signers: SignerWithAddress[];
   let nftLabStoreFactory: ContractFactory;
 
   beforeEach(async () => {
     signers = await ethers.getSigners();
     nftLabStoreFactory = await ethers.getContractFactory(
-      "NFTLabStore",
+      "UnelmaMarket",
       signers[0]
     );
 
     nftLabStore = (await nftLabStoreFactory.deploy(
-      "NFTLab",
-      "NFTL"
-    )) as NFTLabStore;
+      "UnelmaMarket",
+      "UMARKET"
+    )) as UnelmaMarket;
   });
 
   it("Should get nft by hash", async () => {
