@@ -14,7 +14,7 @@ npm i
 npm run compile
 ```
 - compile the contracts
-- deploy them trough the provided scripts trough an ethereum node ([Infura](infura.io) provides some for free)
+- deploy them trough the provided scripts trough an ethereum node ([Infura](https://infura.io/) provides some for free)
 - build a frontend that handles contract calls (I suggest [metamask](metamask.io) apis combined with [ethers](https://github.com/ethers-io/ethers.js/) to interact with your contract)
 - deploy (if your site is a single page site build for example with angular or react i also suggesto [ipfs](ipfs.io) to deploy it for free)
 
